@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frankeno/xsalert@main/src/themes/light-theme.css">
+    <script src="https://cdn.jsdelivr.net/gh/frankeno/xsalert@main/src/xsalert.js"></script>
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Khodam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        .copyright {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="copyright">
+            <p>Copyright 2024 | Fadlullah.7</p>
+        </div>
+        <h1>Check Khodam Kamu</h1>
+        <input type="text" id="inputan" placeholder="Masukkan Nama">
+        <button onclick="cekkhodam()"><b>CEK</b></button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function cekkhodam() {
+            const name = document.getElementById('inputan').value.trim();
+            if (name === "") {
+                XSAlert({
+                    title: 'Error',
+                    message: 'Emang Bowleh Sekosong Itu',
+                    icon: 'error',
+                    hideCancelButton: true
+                })
+                return;
+            }
+
+            const khodams = [
+                "Dinosaurus Kuning",
+                "Tomcat",
+                "Berang Berang",
+                "Landak",
+                "Prenjak Alang Alang",
+                "Koala",
+                "Power Ranger Merah",
+                "Ultraman cosmos",
+                "Power Ranger pink",
+                "Kosong (ISI KHODAM CHT ADMIN)",
+                "Kuda Poni",
+                "Naga Sarangan",
+                "Micky Mouse",
+                "Kyubi",
+                "Macan Kumbang ",
+                "Kumbang"
+                
+            ];
+
+            const acak = Math.floor(Math.random() * khodams.length);
+            const khodam = khodams[acak];
+            const hasil = `Nama: ${name}\nKhodam: ${khodam}`;
+
+            document.getElementById('result').innerText = hasil;
+        }
+    </script>
+</body>
+
+</html>
